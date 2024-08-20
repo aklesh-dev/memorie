@@ -13,9 +13,9 @@ const Posts = ({setCurrentId}) => {
   // console.log("Posts component - posts state:", data);
 
   return (
-    <section className="mx-1 w-fit h-full flex ">
+    <section className="mx-1 w-full h-full flex ">
       {!data.length ? (
-        <div className='flex justify-center mt-0'>
+        <div className='flex justify-center w-full mt-1'>
           <Circles
             height="80"
             width="80"

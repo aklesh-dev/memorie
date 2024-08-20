@@ -34,6 +34,8 @@ const Form = ({ currentId, setCurrentId }) => {
     formData.append('creator', data.creator);
     formData.append('title', data.title);
     formData.append('message', data.message);
+    //--Split the tags string into an array, and trim each tag
+    // const tagsArray = data.tags.split(',')
     formData.append('tags', data.tags);
 
     if (data.selectedFile[0]) {

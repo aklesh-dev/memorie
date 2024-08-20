@@ -3,8 +3,10 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 import bodyParser from 'body-parser';
 import postRoute from './routes/posts.js';
+import dotenv  from 'dotenv';
 
 const app = express();
+dotenv.config();
 
 
 app.use(bodyParser.json({ limit: "30mb", extended: true }));
@@ -16,10 +18,10 @@ app.use('/uploads', express.static('uploads'));
 
 app.use('/posts', postRoute);
 
-const CONNECTION_URL = "mongodb+srv://akleshyadav0408:akleshYadav998@cluster0.kad8qhs.mongodb.net/momentos?retryWrites=true&w=majority&appName=Cluster0";
+
 const PORT = process.env.PORT || 5000;
 
-mongoose.connect(CONNECTION_URL)
+mongoose.connect(process.env.CONNECTION_URL)
     .then(() => {
         app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
         console.log("Connected to MongoDB");
